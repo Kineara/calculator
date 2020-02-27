@@ -4,11 +4,10 @@ html {
     height: 100%;
     justify-content: center;
     align-items: center;
+    background-color: grey;
 }
 
 #calc-container {
-    border: 2px solid black;
-    background-color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,10 +15,10 @@ html {
 
 #screen-container {
     border: 1px solid black;
-    background-color: white;
-    height: 75px;
-    width: 270px;
-    margin: 10px 5px 0px 5px;
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    /* margin: 10px 5px 0px 5px; */
 }
 
 #keypad-container {
@@ -27,23 +26,26 @@ html {
     flex-direction: column; */
     display: grid;
     grid-template: 6 / 6;
-    grid-gap: 5px;
-    margin: 10px;
+    /* grid-gap: 5px; */
+    /* margin: 10px; */
 }
 
 .button {
+    font-weight: bold;
     border: 1px solid black;
+    background-color: #1a1a1a;
+    color: white;
     text-align: center;
     height: 100%;
     width: 100%;
 }
 
 .row1, .row2, .row3, .row4, .row5 {
-    height: 50px;
+    height: 75px;
 }
 
 .col1, .col2, .col3, .col4, .col5 {
-    width: 50px;
+    width: 75px;
 }
 
 .row1 {
@@ -91,4 +93,5 @@ html {
     grid-row: 4 / 6;
     height: 100%;
     width: 100%;
+    background-color: #00334d;
 }
