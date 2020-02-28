@@ -7,18 +7,42 @@ html {
     background-color: grey;
 }
 
-#calc-container {
+#calcContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#screen-container {
+#screenContainer {
     border: 1px solid black;
     background-color: black;
-    height: 200px;
     width: 100%;
-    /* margin: 10px 5px 0px 5px; */
+    display: flex;
+    flex-direction: column;
+    font-family: "monospace", sans-serif;
+}
+
+#screenTextTop {
+    color: #006699;
+    text-align: left;
+    font-size: 20px;
+    height: 1em;
+    margin: 10px;
+}
+#screenTextCtr {
+    color: white;
+    text-align: right;
+    font-size: 50px;
+    height: 1em;
+    margin: 0 10px 0 10px;
+}
+
+#screenTextBtm {
+    color: #006699;
+    text-align: left;
+    font-size: 20px;
+    height: 1em;
+    margin: 10px;
 }
 
 #keypad-container {
@@ -31,7 +55,8 @@ html {
 }
 
 .button {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 16px;
     border: 1px solid black;
     background-color: #1a1a1a;
     color: white;
@@ -88,10 +113,14 @@ html {
     grid-column: 5 / 6;
 }
 
-.btnEquals {
+.equalsBtn {
     grid-column: 5 / 6;
     grid-row: 4 / 6;
     height: 100%;
     width: 100%;
-    background-color: #00334d;
+    background-color: #006699;
+}
+
+.numBtn {
+    color: #006699;
 }
