@@ -1,15 +1,31 @@
-input = []
+// function declarations
+function clearDisplay() {
+    display.textContent = "";
+}
+
+function clearAll() {
+    input = [];
+    clearDisplay();
+}
+
+function addition(displayVal = 0) {
+    return acc + (displayVal * 1);
+}
+
+// Store inputs
+let input = [];
+let acc = 0;
 
 // Number buttons
 let numBtnList = document.querySelectorAll(".numBtn");
 let display = document.querySelector("#screenTextCtr");
-for (const btn of numBtnList) {
-    btn.addEventListener('click', (e) => display.textContent += e.target.textContent);
+for (const numBtn of numBtnList) {
+    numBtn.addEventListener('click', (e) => display.textContent += e.target.textContent);
 }
 
 // Clear button
 let clrBtn = document.querySelector(".clrBtn");
-clrBtn.addEventListener('click', () => display.textContent = "");
+clrBtn.addEventListener('click', () => clearDisplay());
 
 // Delete button
 let delBtn = document.querySelector(".delBtn");
@@ -18,10 +34,43 @@ delBtn.addEventListener('click', () => display.textContent = display.textContent
 // Equals button
 let equalsBtn = document.querySelector(".equalsBtn");
 equalsBtn.addEventListener('click', function() {
-    input.push(display.textContent);
-    display.textContent = "";   // need to define a clear function to use for clr and =
+    clearDisplay();
 });
+
+// Function buttons
+let funcBtnList = document.querySelectorAll(".funcBtn");
+for (const funcBtn of funcBtnList) {
+    funcBtn.addEventListener('click', function(e) {
+
+        // append display contents to input array
+        switch(e.target.textContent) {
+            case "+":
+                const addNum = display.textContent;
+                clearDisplay();
+                acc = addition(addNum);
+                clearDisplay();
+                display.textContent = acc;
+                break;
+            case "-":
+                input.push("-");
+                break;
+            case "/":
+                input.push("/");
+                break;
+            case "*":
+                input.push("*");
+                break;
+        }
+    })
+}
+
 
 // Theme button
 let themeBtn = document.querySelector(".themeBtn");
-themeBtn.addEventListener('click', () => document.querySelector("#screenContainer").style.backgroundColor = "white");
+themeBtn.addEventListener('click', function() {
+    const screen = document.querySelector("#screenContainer");
+    console.log(screen.style.backgroundColor);
+    screen.style.backgroundColor === "white"
+    ? screen.style.backgroundColor = "black"
+    : screen.style.backgroundColor = "white";
+})
